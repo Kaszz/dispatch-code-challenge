@@ -1,0 +1,31 @@
+<div *ngIf="weatherData$ | async as weatherData">
+  <div *ngIf="weatherData.report">
+    <div class="header">
+      <app-flight-rules flightRule="vfr"></app-flight-rules>
+      <div class="time-ago"> {{ weatherData.report.conditions.dateIssued | timeAgo }} </div>
+    </div>
+    <div class="text">
+      {{ weatherData.report.conditions.text }}
+    </div>
+    <app-weather-report-data-item
+      label="Time"
+      [value]="weatherData.report.conditions.dateIssued | dateFormat">
+    </app-weather-report-data-item>
+    <app-weather-report-data-item
+      label="Winds"
+      value="{{ weatherData.report.conditions.wind.direction }}° at {{ Math.round(weatherData.report.conditions.wind.speedKts) }} kts">
+    </app-weather-report-data-item>
+    <app-weather-report-data-item
+      label="Visibility"
+      value="{{ weatherData.report.conditions.visibility.distanceSm }} sm">
+    </app-weather-report-data-item>
+    <app-weather-report-data-item
+      label="Temperature"
+      value="{{ weatherData.report.conditions.tempC }}°C ({{ weatherData.report.conditions.tempC | toFahrenheit }}°F)">
+    </app-weather-report-data-item>
+    <app-weather-report-data-item
+      label="Altimeter"
+      value="{{ weatherData.report.conditions.pressureHg }} in Hg">
+    </app-weather-report-data-item>
+  </div>
+</div>

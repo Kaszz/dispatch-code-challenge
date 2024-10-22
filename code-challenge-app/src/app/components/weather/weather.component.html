@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="icao-search">
+    <input [(ngModel)]="icao" placeholder="ICAO code">
+    <button (click)="getWeatherReport()">Get report</button>
+  </div>
+  <div class="weather-data">
+    <div class="navigation">
+      <a routerLink="/weather/metar" routerLinkActive="active" class="navigation-item">METAR</a>
+      <a routerLink="/weather/taf" routerLinkActive="active" class="navigation-item">TAF</a>
+      <a routerLink="/weather/full" routerLinkActive="active" class="navigation-item">Full</a>
+      <a routerLink="/weather/logs" routerLinkActive="active" class="navigation-item">Logs</a>
+    </div>
+    <div class="loader" *ngIf="isLoading"></div>
+    <router-outlet *ngIf="!isLoading"></router-outlet>
+  </div>
+</div>

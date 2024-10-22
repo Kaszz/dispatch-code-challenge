@@ -1,0 +1,9 @@
+<div *ngIf="!isFlightRule" class="data-item">
+  <div class="label"> {{ label }} </div>
+  <div> {{ value }} </div>
+</div>
+
+<div *ngIf="isFlightRule" class="data-item">
+  <div class="label"> <app-flight-rules [flightRule]="value" [showText]="false"></app-flight-rules> </div>
+  <div> <app-flight-rules [flightRule]="value" [showDot]="false"></app-flight-rules> </div>
+</div>

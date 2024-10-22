@@ -1,0 +1,4 @@
+<div class="flight-rules">
+  <span *ngIf="showDot" class="dot" ngClass="dot-{{ flightRule }}"></span>
+  <span *ngIf="showText" class="text" ngClass="text-{{ flightRule }}">{{ flightRule.toUpperCase() }}</span>
+</div>

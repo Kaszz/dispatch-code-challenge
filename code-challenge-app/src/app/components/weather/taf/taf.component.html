@@ -1,0 +1,35 @@
+<div *ngIf="weatherData$ | async as weatherData">
+  <div *ngIf="weatherData.report">
+    <div class="header">
+      {{ weatherData.report.forecast.ident.toUpperCase() }} TAF
+      <div class="time-ago"> {{ weatherData.report.conditions.dateIssued | timeAgo }} </div>
+    </div>
+    <div class="text">
+      {{ weatherData.report.forecast.text }}
+    </div>
+    <div *ngFor="let forecastCondition of weatherData.report.forecast.conditions; first as isFirst">
+      <div *ngIf="isFirst" class="header">
+        {{ forecastCondition.period.dateStart | dateFormat }} (CURRENT)
+      </div>
+      <div *ngIf="!isFirst" class="header">
+        {{ forecastCondition.period.dateStart | dateFormat }}
+      </div>
+      <app-weather-report-data-item
+        [value]="forecastCondition.flightRules"
+        [isFlightRule]="true">
+      </app-weather-report-data-item>
+      <app-weather-report-data-item
+        label="Winds"
+        value="{{ forecastCondition.wind.direction }}° at {{ Math.round(forecastCondition.wind.speedKts) }} kts">
+      </app-weather-report-data-item>
+      <app-weather-report-data-item
+        label="Visibility"
+        value="{{ forecastCondition.visibility.distanceSm }} sm">
+      </app-weather-report-data-item>
+      <app-weather-report-data-item
+        label="Expires"
+        value="{{ forecastCondition.period.dateEnd | dateFormat }}">
+      </app-weather-report-data-item>
+    </div>
+  </div>
+</div>

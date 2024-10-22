@@ -1,0 +1,14 @@
+$background-color: #20364D;
+$primary-color: #3C9AD9;
+$off-white-color: #EEEEEE;
+$grey-color: #7E8287;
+$highlight-color: #21C426;
+$warning-color: #e38a25;
+$error-color: red;
+$info-color: purple;
+$alert-color: deeppink;
+
+body {
+  background: $background-color;
+  font-family: sans-serif, serif;
+}

@@ -1,0 +1,9 @@
+.idea
+
+code-challenge-app/.idea
+code-challenge-app/dist
+code-challenge-app/node_modules
+
+backend/.idea
+backend/bin
+backend/obj

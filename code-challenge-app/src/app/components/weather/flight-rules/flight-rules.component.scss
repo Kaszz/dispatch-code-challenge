@@ -1,0 +1,51 @@
+@import 'src/styles.scss';
+
+.flight-rules {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+  .dot {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+
+  .text {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  .dot-vfr {
+    background-color: $highlight-color;
+  }
+
+  .dot-ifr {
+    background-color: $error-color;
+  }
+
+  .dot-mvfr {
+    background-color: $info-color;
+  }
+
+  .dot-lifr {
+    background-color: $alert-color;
+  }
+
+  .text-vfr {
+    color: $highlight-color;
+  }
+
+  .text-ifr {
+    color: $error-color;
+  }
+
+  .text-mvfr {
+    color: $info-color;
+  }
+
+  .text-lifr {
+    color: $alert-color;
+  }
+}

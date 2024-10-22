@@ -1,0 +1,17 @@
+@import 'src/styles.scss';
+
+.data-item {
+  display: flex;
+  padding: 0.5em;
+  font-size: 1.1em;
+  gap: 0.5em;
+  border-bottom: 1px solid $off-white-color;
+}
+
+.label {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 45%;
+  font-weight: bold;
+}

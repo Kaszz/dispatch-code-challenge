@@ -1,0 +1,110 @@
+@import 'src/styles.scss';
+
+.container {
+  width: 30%;
+  margin: 2em auto;
+}
+
+.weather-data {
+  background: white;
+  min-height: 7em;
+}
+
+.navigation {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.navigation-item {
+  display: flex;
+  width: 100%;
+  padding: 1em;
+  border: 1px solid $off-white-color;
+  color: black;
+  text-decoration: none;
+  font-size: 1.2em;
+  justify-content: center;
+}
+
+.navigation-item.active {
+  color: white;
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+
+.icao-search {
+  background: $off-white-color;
+  display: flex;
+  padding: 0.5em;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+  width: 50%;
+  border: 1px solid #CECECE;
+
+  input, button {
+    width: 50%;
+    padding: 0.2em;
+    border: 1px solid black;
+    font-size: 1.1em;
+    box-sizing: border-box;
+  }
+
+  button {
+    background: $primary-color;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $off-white-color;
+  border-top: 1px solid #cecece;
+  border-bottom: 1px solid #cecece;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  color: $grey-color;
+}
+
+.time-ago {
+  color: $warning-color;
+  font-weight: bold;
+}
+
+.text {
+  padding: 0.5em 1em;
+  color: $highlight-color;
+  font-weight: bold;
+  font-size: 1.1em;
+  border-bottom: 1px solid $off-white-color;
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  margin: 1em auto;
+  border-radius: 50%;
+  background-color: #D3D3D3;
+  box-shadow: 32px 0 #D3D3D3, -32px 0 #D3D3D3;
+  position: relative;
+  animation: flash 0.5s ease-out infinite alternate;
+}
+
+@keyframes flash {
+  0% {
+    background-color: rgba(211, 211, 211, 0.13);
+    box-shadow: 32px 0 rgba(211, 211, 211, 0.13), -32px 0 #D3D3D3;
+  }
+  50% {
+    background-color: #D3D3D3;
+    box-shadow: 32px 0 rgba(211, 211, 211, 0.13), -32px 0 rgba(211, 211, 211, 0.13);
+  }
+  100% {
+    background-color: rgba(211, 211, 211, 0.13);
+    box-shadow: 32px 0 #D3D3D3, -32px 0 rgba(211, 211, 211, 0.13);
+  }
+}

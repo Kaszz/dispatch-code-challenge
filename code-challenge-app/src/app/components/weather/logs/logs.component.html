@@ -1,0 +1,6 @@
+<div *ngFor="let log of logs$ | async">
+  <app-weather-report-data-item
+    [label]="log.timestamp | dateFormat"
+    [value]=log.message>
+  </app-weather-report-data-item>
+</div>
